@@ -1,6 +1,6 @@
 /**
-* ArithServer
- */
+Code reference: http://jan.newmarch.name/go/rpc/chapter-rpc.html
+*/
 
 package main
 
