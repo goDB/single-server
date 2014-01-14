@@ -27,6 +27,7 @@ func main() {
 	// Synchronous call
 	
 	// Put value on server
+	fmt.Println("Putting value on server")
 	keyValue := data.KeyValue{data.Key{"nikhil"},data.Val{1}}
 	var reply int
 	err = client.Call("Server.Put", keyValue, &reply)

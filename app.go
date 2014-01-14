@@ -9,5 +9,5 @@ func main(){
 	s := new(data.Store)
 	s.M = make(map[string]int)
 	s.M["it"]=1
-	fmt.Println(s.M)
+	fmt.Printf(s.M)
 }
