@@ -19,7 +19,7 @@ func main() {
 	}
 	serverAddress := os.Args[1]
 
-	client, err := rpc.DialHTTP("tcp", serverAddress+":1234")
+	client, err := rpc.DialHTTP("tcp", serverAddress+":4321")
 	if err != nil {
 		log.Fatal("dialing:", err)
 	}
@@ -27,8 +27,8 @@ func main() {
 	// Synchronous call
 	
 	// Put value on server
-	fmt.Println("Putting value on server")
-	keyValue := data.KeyValue{data.Key{"nikhil"},data.Val{1}}
+	fmt.Println("Putting key-value pair, ('key',1) on server")
+	keyValue := data.KeyValue{data.Key{"key"},data.Val{1}}
 	var reply int
 	err = client.Call("Server.Put", keyValue, &reply)
 	if err != nil {
@@ -37,10 +37,10 @@ func main() {
 	
 	// Get value from server
 	var value data.Val
-	var key = data.Key{"nikhil"}
+	var key = data.Key{"key"}
 	err = client.Call("Server.Get", key, &value)
 	if err != nil {
 		log.Fatal("server error:", err)
 	}
-	fmt.Println("value for nikhil is",value.Value)
+	fmt.Println("value for 'key' is",value.Value)
 }

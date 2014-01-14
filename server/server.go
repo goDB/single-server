@@ -41,7 +41,7 @@ func main() {
 	dataServer := new(Server)
 	rpc.Register(dataServer)
 	rpc.HandleHTTP()
-	err := http.ListenAndServe(":1234", nil)
+	err := http.ListenAndServe(":4321", nil)
 	if err != nil {
 		fmt.Println(err.Error())
 	}
